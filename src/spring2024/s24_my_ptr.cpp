@@ -243,8 +243,7 @@ int main() {
   }
   std::cout << "Count: " << sp1.use_count() << std::endl;  // Output: 1
   // 1. Always make a copy of an existing std::shared_ptr.
-  int *rp = new int;
-  std::shared_ptr<int> sp3{rp};
+  std::shared_ptr<int> sp3 = std::make_shared<int>();
   // std::shared_ptr<int> sp4{ rp }; // WRONG!
   std::shared_ptr<int> sp4{sp3};
   // 2. Always use std::make_shared() to create a shared_ptr.
